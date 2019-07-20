@@ -8,3 +8,6 @@ You can become king by paying 81 gold to the @king.
 
 The most interesting stuff happens in me/corperateraider.
 AntiCheat was included back then, but often haved badly, so I removed it. I can ofc be reactivated.
+
+# Map
+If you are lost on the map, just look up Jena, Germany on Google Maps or OpenStreetMaps. It's based on that, all streets are the same!
