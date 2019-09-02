@@ -238,27 +238,27 @@ public class Plugin extends JavaPlugin {
 	public static long websiteUntil;
 	
 	public static String[] br = new String[]{
-		"�aUse '/report <message>' to report players or bugs",
-		"�aUse '/help recipes' to get information about new recipes :)",
-		"�4Remember to use Optifine and Conquest!",
-		"�cThank you for playing on �4miner952x.mcserver.ws:25637",
-		"�bDid you know the world is �45632 blocks deep�b?",
-		"�bDid you know there are �4180 new blocks and 194 new recipes�b registered?",
-		"�bDid you know the map is generated from real map data? It's a city in Germany",
-		"�aUse '/claim <plotname>' to claim your own plot, but don't expect you get much space for 100gn",
-		"�aSee the stats on the right? That's your position and your money",
-		"�2Ideas for the server? Just create a '/report #idea <message>'",
-		"�cNobody answeres? You might can't hear them because they are far away.",
-		"�cDied? Aground in the dream world? Just die again ;)",
-		"�aUse '/list' to get interesting statistics :)",
-		"�bProject for more than 2 years :D @WorldGenerator",
-		"�4Annoyed by AntiCheat+? I am sorry. Please create a '/report' to let me know.",
-		"�bCan't break logs by hand? Did you try in reallife? Just use twigs from leaves.",
-		"�7Server by Antonio Noack = Miner952x :), Updates soon :)",
-		"�bShaft collapsed? Maybe build some stabilisation :)",
-		"�bLaggs in Nether? I know...",
-		"�bUse '/sign' to get information about how to create a chest shop :) - you should own a plot for that.",
-		"�aDon't like the layout features? Use '/layout false' to disable them :)",
+		"§aUse '/report <message>' to report players or bugs",
+		"§aUse '/help recipes' to get information about new recipes :)",
+		"§4Remember to use Optifine and Conquest!",
+		"§cThank you for playing on §4miner952x.mcserver.ws:25637",
+		"§bDid you know the world is §45632 blocks deep§b?",
+		"§bDid you know there are §4180 new blocks and 194 new recipes§b registered?",
+		"§bDid you know the map is generated from real map data? It's a city in Germany",
+		"§aUse '/claim <plotname>' to claim your own plot, but don't expect you get much space for 100gn",
+		"§aSee the stats on the right? That's your position and your money",
+		"§2Ideas for the server? Just create a '/report #idea <message>'",
+		"§cNobody answeres? You might can't hear them because they are far away.",
+		"§cDied? Aground in the dream world? Just die again ;)",
+		"§aUse '/list' to get interesting statistics :)",
+		"§bProject for more than 2 years :D @WorldGenerator",
+		"§4Annoyed by AntiCheat+? I am sorry. Please create a '/report' to let me know.",
+		"§bCan't break logs by hand? Did you try in reallife? Just use twigs from leaves.",
+		"§7Server by Antonio Noack = Miner952x :), Updates soon :)",
+		"§bShaft collapsed? Maybe build some stabilisation :)",
+		"§bLaggs in Nether? I know...",
+		"§bUse '/sign' to get information about how to create a chest shop :) - you should own a plot for that.",
+		"§aDon't like the layout features? Use '/layout false' to disable them :)",
 		"Did you know there is a webserver on the SAME port? When I get it there will be a life map(my own and better dynmap :P)"
 	};
 	
@@ -381,7 +381,7 @@ public class Plugin extends JavaPlugin {
 	public static void removeAfk(String name){
 		if(isAfk.containsKey(name) && isAfk.get(name)){
 			isAfk.put(name, false);
-			Bukkit.broadcastMessage("�3+�f"+Rank.getNickName(name));
+			Bukkit.broadcastMessage("§3+§f"+Rank.getNickName(name));
 		}
 	}
 	
@@ -390,7 +390,7 @@ public class Plugin extends JavaPlugin {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
 		
 		if(label.equalsIgnoreCase("anticheat") || label.equalsIgnoreCase("anti")){
-			// AntiCheat gibt immer true zur�ck...
+			// AntiCheat gibt immer true zurück...
 			return anticheat.onCommand(sender, cmd, label, args);
 		}
 		
@@ -398,7 +398,7 @@ public class Plugin extends JavaPlugin {
 			if(label.equalsIgnoreCase("w") && args.length>1){
 				Player p = Bukkit.getPlayer(args[0]);
 				if(p!=null && p.isOnline()){
-					String m="�c[Console]�f";
+					String m="§c[Console]§f";
 					for(int i=1;i<args.length;i++){
 						m+=" "+args[i];
 					}
@@ -436,19 +436,19 @@ public class Plugin extends JavaPlugin {
 								p.sendMessage(serfix+"Allready logged in!");
 							}
 						} else {
-							p.sendMessage(serfix+"�4Wrong password!");
+							p.sendMessage(serfix+"§4Wrong password!");
 						}
 					} else {
-						p.sendMessage(serfix+"�bThanks, but we are in online mode now...");
+						p.sendMessage(serfix+"§bThanks, but we are in online mode now...");
 					}
 				} else if(args.length==0){
 					return false;
 				} else {
-					p.sendMessage(serfix+"�4Wrong password!");
+					p.sendMessage(serfix+"§4Wrong password!");
 				}
 			} else {
-				p.sendMessage(serfix+"�bOK. Don't forget your password!\n"
-						+ "Your password is �4"+SpawnManager.getPassword(p.getName()));
+				p.sendMessage(serfix+"§bOK. Don't forget your password!\n"
+						+ "Your password is §4"+SpawnManager.getPassword(p.getName()));
 				Rank.hasPassword.add(p.getName());
 			}
 		} else if(label.equalsIgnoreCase("fly")){
@@ -468,10 +468,10 @@ public class Plugin extends JavaPlugin {
 						+ "There are no special names or ranks, but if I am the king, you can get one as supporter or sth like this :)");
 				break;
 			case "2":
-				p.sendMessage("Ich habe zwar noch keinen Spendebutton, aber ihr k�nnt �ber Paypal spenden: antonio-noack@gmx.de\n"
-						+ "Wenn ihr Ingamegeld daf�r wollt, k�nnt ihr 1000gn/US$ (~90ct) bekommen :)\n"
-						+ "Solange ich der K�nig bin k�nnt ihr auch gerne einen netten Rang und Rechte f�r farbiges Schreiben bekommen... "
-						+ "wenn ichs nicht mehr bin fragt einfach den aktuellen K�nig :)");
+				p.sendMessage("Ich habe zwar noch keinen Spendebutton, aber ihr könnt über Paypal spenden: antonio-noack@gmx.de\n"
+						+ "Wenn ihr Ingamegeld dafür wollt, könnt ihr 1000gn/US$ (~90ct) bekommen :)\n"
+						+ "Solange ich der König bin könnt ihr auch gerne einen netten Rang und Rechte für farbiges Schreiben bekommen... "
+						+ "wenn ichs nicht mehr bin fragt einfach den aktuellen König :)");
 				break;
 			}
 		} else if(label.equalsIgnoreCase("accept")){
@@ -489,7 +489,7 @@ public class Plugin extends JavaPlugin {
 					} else {
 						p.sendMessage(prefix+Sprache.select(p.getName(),
 								"The time of 120s is over!",
-								"Die 120s-Frist ist vor�ber!", null, null));
+								"Die 120s-Frist ist vorüber!", null, null));
 					}
 				} else {
 					p.sendMessage(prefix+Sprache.select(p.getName(),
@@ -499,12 +499,12 @@ public class Plugin extends JavaPlugin {
 			} else {
 				p.sendMessage(prefix+Sprache.select(p.getName(),
 						"No tp aviable!",
-						"Kein tp verf�gbar!", null, null));
+						"Kein tp verfügbar!", null, null));
 			}
 		} else if(label.equalsIgnoreCase("afk")){
 			if(isAfk(p.getName())){
 				isAfk.put(p.getName(), false);
-				Bukkit.broadcastMessage("�3+�f"+Rank.getNickName(p.getName()));
+				Bukkit.broadcastMessage("§3+§f"+Rank.getNickName(p.getName()));
 			} else {
 				final Player pl = p;
 				final Location loc = p.getLocation().clone();
@@ -512,11 +512,11 @@ public class Plugin extends JavaPlugin {
 					@Override public void run(){
 						if(pl.getLocation().distanceSquared(loc)<1){
 							isAfk.put(pl.getName(), true);
-							Bukkit.broadcastMessage("�3-�f"+Rank.getNickName(pl.getName()));
+							Bukkit.broadcastMessage("§3-§f"+Rank.getNickName(pl.getName()));
 						} else {
 							pl.sendMessage(Plugin.prefix+Sprache.select(pl.getName(),
 									"Don't move! Your afk request was cancelled.",
-									"Steh still! Deine afk-Anfrage wurde zur�ckgewiesen.", null, null));
+									"Steh still! Deine afk-Anfrage wurde zurückgewiesen.", null, null));
 						}
 					}
 				}, 100);
@@ -557,7 +557,7 @@ public class Plugin extends JavaPlugin {
 					p.sendMessage("("+this.getDataFolder().getFreeSpace()/1024/1024/1024+"GB/"+this.getDataFolder().getUsableSpace()/1024/1024/1024+"GB)/"+this.getDataFolder().getTotalSpace()/1024/1024/1024+"GB");
 					break;
 				case "list":
-					p.setPlayerListName(args.length==2?args[1].replace('&', '�').replace("\\�", "&"):"");
+					p.setPlayerListName(args.length==2?args[1].replace('&', '§').replace("\\&", "&"):"");
 					break;
 				case "rank":
 					if(!p.isOp())break;
@@ -689,7 +689,7 @@ public class Plugin extends JavaPlugin {
 						if((p=getPlayer(args[0]))!=null){
 							p.sendMessage(Bank.prefix+Sprache.select(p.getName(),
 									n+" paid you "+l+"gn",
-									n+" hat dir "+l+"gn �berwiesen", null, null));
+									n+" hat dir "+l+"gn überwiesen", null, null));
 						}
 					} else {
 						Bank.sendErrMessage(p, 0);
@@ -719,7 +719,7 @@ public class Plugin extends JavaPlugin {
 				if(Bank.getBilance(p)<k){
 					p.sendMessage(prefix+Sprache.select(p.getName(), 
 							"You don't have enought money to broadcast more messages! It would cost "+k+"gn.",
-							"Du hast nicht genug Geld um einen Rundruf zu machen. Es w�rde dich "+k+"gn kosten.", null, null));
+							"Du hast nicht genug Geld um einen Rundruf zu machen. Es würde dich "+k+"gn kosten.", null, null));
 				} else {
 					if(Bank.substract(p.getName(), k)){
 						String text = "";
@@ -739,7 +739,7 @@ public class Plugin extends JavaPlugin {
 					if(!((c>='a' && c<='z') || (c>='A' && c<='Z') || (c>='0' && c<='9') || c=='_' || c=='-')){
 						p.sendMessage(prefix+Sprache.select(p.getName(),
 								"Your plot name is invalid. You used: '"+c+"'. Allowed: A-Z, a-z, 0-9, '_' and '-'",
-								"Dein Grundstücksname ist ung�ltig. Du hast '"+c+"' benutzt, es sind aber nur A-Z, a-z, 0-9, '_' und '-' erlaubt.", null, null));
+								"Dein Grundstücksname ist ungültig. Du hast '"+c+"' benutzt, es sind aber nur A-Z, a-z, 0-9, '_' und '-' erlaubt.", null, null));
 						return true;
 					}
 				}
@@ -758,7 +758,7 @@ public class Plugin extends JavaPlugin {
 									default:
 										p.sendMessage(prefix+Sprache.select(p.getName(), 
 												"This plot costs "+k+". The "+(isQueen?"Queen":"King")+" only has "+Bank.getBilance("@king")+". Private plots can't be bought as "+(isQueen?"Queen":"King")+"!",
-												"Dieses Grundstück kostet "+k+". "+(isQueen?"Die K�nigin":"Der K�nig")+" hat nur "+Bank.getBilance("@king")+". Private Grundstücke k�nnen als "+(isQueen?"K�nigin":"K�nig")+" nicht gekauft werden!", null, null));
+												"Dieses Grundstück kostet "+k+". "+(isQueen?"Die Königin":"Der König")+" hat nur "+Bank.getBilance("@king")+". Private Grundstücke können als "+(isQueen?"Königin":"König")+" nicht gekauft werden!", null, null));
 										break;
 									}
 								} else {
@@ -775,19 +775,19 @@ public class Plugin extends JavaPlugin {
 							} else {
 								p.sendMessage(prefix+Sprache.select(p.getName(),
 										"This plot is allready claimed by "+oldowner+". Maybe she/he sells it.", 
-										"Dieses Grundstück geh�rt bereits "+oldowner+". Vielleicht verkauft er/sie es.", null, null));
+										"Dieses Grundstück gehört bereits "+oldowner+". Vielleicht verkauft er/sie es.", null, null));
 							}
 						}
 					}
 				} else {
 					p.sendMessage(prefix+Sprache.select(p.getName(),
 							"Invalid plot name: "+s,
-							"Ung�ltiger Grundstücksname: "+s, null, null));
+							"Ungültiger Grundstücksname: "+s, null, null));
 				}
 			} else {
 				p.sendMessage(prefix+Sprache.select(p.getName(), 
 						"Please give your new plot a name. e.g. '/claim Santa_Maria'. Allowed chars: A-Z, a-z, 0-9, '_' and '-'",
-						"Bitte gib deinem Grundstück einen Namen, z.B. '/claim Gro�e_Villa'. Erlaubte Zeichen sind A-Z, a-z, 0-9, '_' und '-'", null, null));
+						"Bitte gib deinem Grundstück einen Namen, z.B. '/claim Große_Villa'. Erlaubte Zeichen sind A-Z, a-z, 0-9, '_' und '-'", null, null));
 			}
 		} else if(label.equalsIgnoreCase("event")){
 			if(Rank.hasPermisson(p.getName(), "e")){
@@ -799,7 +799,7 @@ public class Plugin extends JavaPlugin {
 				p.sendMessage(serfix+"Set the MOTD-suffix to '"+ev+"'.");
 			} else p.sendMessage(serfix+Sprache.select(p.getName(),
 					"Only the king or sb with the permission 'e' can use this command",
-					"Du hast nicht das n�tige Recht 'e'!", null, null));
+					"Du hast nicht das nötige Recht 'e'!", null, null));
 		} else if(label.equalsIgnoreCase("free")){
 			if(Prison.hasInside(p.getName())){
 				Prison.freeWithoutTP(p.getName());
@@ -836,13 +836,13 @@ public class Plugin extends JavaPlugin {
 		} else if(label.equalsIgnoreCase("iamqueen") && !isQueen){
 			if(p.getName().equalsIgnoreCase(kingsname)){
 				isQueen = true;
-				p.sendMessage(prefix+Sprache.select(p.getName(), "Welcome dear �cQueen", "Willkommen �cK�nigin", null, null));
+				p.sendMessage(prefix+Sprache.select(p.getName(), "Welcome dear §cQueen", "Willkommen §cKönigin", null, null));
 				Rank.setNickNameGetJoinMessage(p.getName(), p);
 			} else p.sendMessage("Can only be changed by the King himself");
 		} else if(label.equalsIgnoreCase("iamking") && isQueen){
 			if(p.getName().equalsIgnoreCase(kingsname)){
 				isQueen = false;
-				p.sendMessage(prefix+Sprache.select(p.getName(), "Welcome dear �cKing", "Willkommen �cK�nig", null, null));
+				p.sendMessage(prefix+Sprache.select(p.getName(), "Welcome dear §cKing", "Willkommen §cKönig", null, null));
 				Rank.setNickNameGetJoinMessage(p.getName(), p);
 			} else p.sendMessage("Can be only changed by the Queen herself");
 		} else if(label.equalsIgnoreCase("layout")){
@@ -862,14 +862,14 @@ public class Plugin extends JavaPlugin {
 				if(p!=zwo && w==zwo.getWorld()){
 					Location z1=zwo.getLocation();
 					double dis2;
-					if((dis2=z1.distanceSquared(l1))<0.4){// n�her als 1m voneinander entfernt
+					if((dis2=z1.distanceSquared(l1))<0.4){// näher als 1m voneinander entfernt
 						Location l2 = l1.add(l1.getDirection().multiply(z1.distance(l1)));
 						if(l2.distanceSquared(z1)<0.2){
 							// Spieler guckt diese Person an :)
 							
 							Location trueloc = BlockListener.trueLocation(l1.add(z1).multiply(0.5));
 							if((dis2=l1.getDirection().distanceSquared(z1.getDirection().multiply(-1)))<0.16){
-								// gek�sster Spieler guckt diesen Spieler an...
+								// geküsster Spieler guckt diesen Spieler an...
 								// richtiger Kuss
 								
 								Wolf wolf = (Wolf) world.spawnEntity(l1.add(z1).multiply(0.5).add(0,1,0), EntityType.WOLF);
@@ -880,8 +880,8 @@ public class Plugin extends JavaPlugin {
 								for(Player online:Bukkit.getOnlinePlayers()){
 									if(BlockListener.trueLocation(online.getLocation()).distanceSquared(trueloc)<10000){
 										online.sendMessage(Sprache.select(online.getName(),
-												" �c\u2764 �o"+Rank.getNickName(p.getName())+" kissed "+Rank.getNickName(zwo.getName()),
-												" �c\u2764 �o"+Rank.getNickName(p.getName())+" k�sste "+Rank.getNickName(zwo.getName()), null, null));
+												" §c\u2764 §o"+Rank.getNickName(p.getName())+" kissed "+Rank.getNickName(zwo.getName()),
+												" §c\u2764 §o"+Rank.getNickName(p.getName())+" küsste "+Rank.getNickName(zwo.getName()), null, null));
 									}
 								}
 							} else if(dis2>1){
@@ -895,8 +895,8 @@ public class Plugin extends JavaPlugin {
 								for(Player online:Bukkit.getOnlinePlayers()){
 									if(BlockListener.trueLocation(online.getLocation()).distanceSquared(trueloc)<1000){
 										online.sendMessage(Sprache.select(online.getName(),
-												" �c\u2764 �o"+Rank.getNickName(p.getName())+" kissed "+Rank.getNickName(zwo.getName())+" slightly in the neck",
-												" �c\u2764 �o"+Rank.getNickName(p.getName())+" k�sste "+Rank.getNickName(zwo.getName())+" sanft in den Nacken", null, null));
+												" §c\u2764 §o"+Rank.getNickName(p.getName())+" kissed "+Rank.getNickName(zwo.getName())+" slightly in the neck",
+												" §c\u2764 §o"+Rank.getNickName(p.getName())+" küsste "+Rank.getNickName(zwo.getName())+" sanft in den Nacken", null, null));
 									}
 								}
 							} else {
@@ -910,8 +910,8 @@ public class Plugin extends JavaPlugin {
 								for(Player online:Bukkit.getOnlinePlayers()){
 									if(BlockListener.trueLocation(online.getLocation()).distanceSquared(trueloc)<3000){
 										online.sendMessage(Sprache.select(online.getName(),
-												" �c\u2764 �o"+Rank.getNickName(p.getName())+" kissed "+Rank.getNickName(zwo.getName())+" on the cheek",
-												" �c\u2764 �o"+Rank.getNickName(p.getName())+" k�sste "+Rank.getNickName(zwo.getName())+" auf die Wange", null, null));
+												" §c\u2764 §o"+Rank.getNickName(p.getName())+" kissed "+Rank.getNickName(zwo.getName())+" on the cheek",
+												" §c\u2764 §o"+Rank.getNickName(p.getName())+" küsste "+Rank.getNickName(zwo.getName())+" auf die Wange", null, null));
 									}
 								}
 							}
@@ -925,7 +925,7 @@ public class Plugin extends JavaPlugin {
 			if(rem!=null){
 				p.sendMessage(prefix+Sprache.select(p.getName(),
 						"Get closer...",
-						"Kommt euch noch ein St�ck n�her...", null, null));
+						"Kommt euch noch ein Stück näher...", null, null));
 			} else {
 				p.sendMessage(prefix+Sprache.select(p.getName(),
 						"Nobody to kiss",
@@ -938,7 +938,7 @@ public class Plugin extends JavaPlugin {
 				if(p!=zwo && w==zwo.getWorld()){
 					Location z1=zwo.getLocation();
 					double dis2;
-					if((dis2=z1.distanceSquared(l1))<0.6){// 0.4=n�her als 1m voneinander entfernt
+					if((dis2=z1.distanceSquared(l1))<0.6){// 0.4=näher als 1m voneinander entfernt
 						Location l2 = l1.add(l1.getDirection().multiply(z1.distance(l1)));
 						if(l2.distanceSquared(z1)<0.2){
 							// Spieler guckt diese Person an :)
@@ -946,8 +946,8 @@ public class Plugin extends JavaPlugin {
 							for(Player online:Bukkit.getOnlinePlayers()){
 								if(BlockListener.trueLocation(online.getLocation()).distanceSquared(trueloc)<3000){
 									online.sendMessage(Sprache.select(online.getName(),
-											" �o"+Rank.getNickName(p.getName())+" hugged "+Rank.getNickName(zwo.getName()),
-											" �o"+Rank.getNickName(p.getName())+" umarmte "+Rank.getNickName(zwo.getName()), null, null));
+											" §o"+Rank.getNickName(p.getName())+" hugged "+Rank.getNickName(zwo.getName()),
+											" §o"+Rank.getNickName(p.getName())+" umarmte "+Rank.getNickName(zwo.getName()), null, null));
 								}
 							}
 							return true;
@@ -960,7 +960,7 @@ public class Plugin extends JavaPlugin {
 			if(rem!=null){
 				p.sendMessage(serfix+Sprache.select(p.getName(),
 						"Get closer...",
-						"Kommt euch noch ein St�ck n�her...", null, null));
+						"Kommt euch noch ein Stück näher...", null, null));
 			} else {
 				p.sendMessage(serfix+Sprache.select(p.getName(),
 						"Nobody to hug :(",
@@ -972,55 +972,55 @@ public class Plugin extends JavaPlugin {
 		} else if(label.equalsIgnoreCase("help") || label.equalsIgnoreCase("?") || label.equalsIgnoreCase("command")){
 			if(args==null || args.length==0){
 				p.sendMessage(serfix+Sprache.select(p.getName(),
-						"�cHelp: list of all commands�f\n"
+						"§cHelp: list of all commands§f\n"
 						+ (p.getName().equalsIgnoreCase(kingsname)?isQueen?
-						  "   /�aIamKing�f Change your gender to male\n":
-						  "   /�aIamQueen�f Change your gender to female\n":"")
-						+ "   /�aafk�f Away from keyboard\n"
-						+ "   /�abank�f Get information about the bank\n"
-						+ "   /�ab�7[balance]�f Get your balance\n"
-						+ "   /�abr�7[broadcast]�f <message>\n"
-						+ "   /�ac�7[claim]�f <plotname> Claim a plot\n"
-						+ "   /�alag�7[lagg]�f <mobs> <friendly> clear by kill\n"
-						+ "   /�alayout�f <true/false> Add layout features?\n"
-						+ "   /�alist�f <listname> Interesting statistics\n"
-						+ "   /�ap�7[pay]�f <playername> <amount>\n"
-						+ "   /�a$�7[price]�f Gives you a price for the plot, you're standing on\n"
-						+ "   /�ar�7[rename]�f <plotname> <newplotname>\n"
-						+ "   /�asp�7[splot, showplot]�f Shows the plot area you're standing on\n"
-						+ "   /�atp�7[teleport]�f <name> Accept + �cCosts 1gn/100m ANYWAY�f\n"
-						+ "   /�aaccept�f accept a tp offer\n"
-						+ "   /�awakeup�7[home]�f tp to home\n"
+						  "   /§aIamKing§f Change your gender to male\n":
+						  "   /§aIamQueen§f Change your gender to female\n":"")
+						+ "   /§aafk§f Away from keyboard\n"
+						+ "   /§abank§f Get information about the bank\n"
+						+ "   /§ab§7[balance]§f Get your balance\n"
+						+ "   /§abr§7[broadcast]§f <message>\n"
+						+ "   /§ac§7[claim]§f <plotname> Claim a plot\n"
+						+ "   /§alag§7[lagg]§f <mobs> <friendly> clear by kill\n"
+						+ "   /§alayout§f <true/false> Add layout features?\n"
+						+ "   /§alist§f <listname> Interesting statistics\n"
+						+ "   /§ap§7[pay]§f <playername> <amount>\n"
+						+ "   /§a$§7[price]§f Gives you a price for the plot, you're standing on\n"
+						+ "   /§ar§7[rename]§f <plotname> <newplotname>\n"
+						+ "   /§asp§7[splot, showplot]§f Shows the plot area you're standing on\n"
+						+ "   /§atp§7[teleport]§f <name> Accept + §cCosts 1gn/100m ANYWAY�f\n"
+						+ "   /§aaccept§f accept a tp offer\n"
+						+ "   /§awakeup§7[home]§f tp to home\n"
 						+ (Rank.hasPermisson(p.getName(), "spawn")?
-						  "   /�aspawn�f Will tp you to spawn\n":"")
-						+ "   /�aw�7[tell, wisper]�f <name> Wisper (1gn/use)\n"
-						+ "   /�afly�f Change mode to spectator mode\n"
-						+ "   /�akiss,hug�f a person",
+						  "   /§aspawn§f Will tp you to spawn\n":"")
+						+ "   /§aw§7[tell, wisper]§f <name> Wisper (1gn/use)\n"
+						+ "   /§afly§f Change mode to spectator mode\n"
+						+ "   /§akiss,hug§f a person",
 						
-						"�cHilfe: Liste aller Befehle�f\n"
+						"§cHilfe: Liste aller Befehle§f\n"
 								+ (p.getName().equalsIgnoreCase(kingsname)?isQueen?
-								  "   /�aIamKing�f Change your gender to male\n":
-								  "   /�aIamQueen�f Change your gender to female\n":"")
-								+ "   /�aafk�f Away from keyboard\n"
-								+ "   /�abank�f Informationen zur Bank\n"
-								+ "   /�ab�7[balance]�f Kontostand anzeigen\n"
-								+ "   /�abr�7[broadcast]�f <message> Rundruf\n"
-								+ "   /�ac�7[claim]�f <plotname> Kaufe ein Grundstück\n"
-								+ "   /�alag�7[lagg]�f <mobs> <friendly> clear by kill\n"
-								+ "   /�alayout�f <true/false> Layout an/aus\n"
-								+ "   /�alist�f <listname> Interessante Statistiken\n"
-								+ "   /�ap�7[pay]�f <playername> <amount>\n"
-								+ "   /�a$�7[price]�f Zeigt dir den Grundstückspreis(worauf du stehst)\n"
-								+ "   /�ar�7[rename]�f <plotname> <newplotname>\n"
-								+ "   /�asp�7[splot, showplot]�f Zeigt die Grundstücksfl�che\n"
-								+ "   /�atp�7[teleport]�f <name> Accept + �cKostet 1gn/100m TROTZDEM�f\n"
-								+ "   /�aaccept�f akzeptiere das tp-Angebot\n"
-								+ "   /�awakeup�7[home]�f Tp nach Hause\n"
+								  "   /§aIamKing§f Change your gender to male\n":
+								  "   /§aIamQueen§f Change your gender to female\n":"")
+								+ "   /§aafk§f Away from keyboard\n"
+								+ "   /§abank§f Informationen zur Bank\n"
+								+ "   /§ab§7[balance]§f Kontostand anzeigen\n"
+								+ "   /§abr§7[broadcast]§f <message> Rundruf\n"
+								+ "   /§ac§7[claim]§f <plotname> Kaufe ein Grundstück\n"
+								+ "   /§alag§7[lagg]§f <mobs> <friendly> clear by kill\n"
+								+ "   /§alayout§f <true/false> Layout an/aus\n"
+								+ "   /§alist§f <listname> Interessante Statistiken\n"
+								+ "   /§ap§7[pay]§f <playername> <amount>\n"
+								+ "   /§a$§7[price]§f Zeigt dir den Grundstückspreis(worauf du stehst)\n"
+								+ "   /§ar§7[rename]§f <plotname> <newplotname>\n"
+								+ "   /§asp§7[splot, showplot]§f Zeigt die Grundstücksfläche\n"
+								+ "   /§atp§7[teleport]§f <name> Accept + §cKostet 1gn/100m TROTZDEM§f\n"
+								+ "   /§aaccept§f akzeptiere das tp-Angebot\n"
+								+ "   /§awakeup§7[home]§f Tp nach Hause\n"
 								+ (Rank.hasPermisson(p.getName(), "spawn")?
-								  "   /�aspawn�f Teleportiert dich zum Spawn\n":"")
-								+ "   /�aw�7[tell, wisper]�f <name> Fl�stern (1gn/Benutzung)\n"
-								+ "   /�afly�f Wechsle in den Beobachtermodus\n"
-								+ "   /�akiss,hug�f K�sse/Umarme jemanden", null, null));
+								  "   /§aspawn§f Teleportiert dich zum Spawn\n":"")
+								+ "   /§aw§7[tell, wisper]§f <name> Flüstern (1gn/Benutzung)\n"
+								+ "   /§afly§f Wechsle in den Beobachtermodus\n"
+								+ "   /§akiss,hug§f Küsse/Umarme jemanden", null, null));
 			} else if(args[0].toLowerCase().startsWith("recipe")){
 				if(args.length==1){
 					p.sendMessage(prefix+Sprache.select(p.getName(),
@@ -1031,7 +1031,7 @@ public class Plugin extends JavaPlugin {
 					// suche nach Inhaltsstoffem
 					if(args[1].startsWith("in:")){
 						
-						String ret = prefix+Sprache.select(p.getName(), "�cIngredient Search�f:\n", "�cInhaltsstoffsuche�f:\n", null, null);
+						String ret = prefix+Sprache.select(p.getName(), "§cIngredient Search§f:\n", "�cInhaltsstoffsuche�f:\n", null, null);
 						
 						args[1]=args[1].substring(3);
 						
@@ -1053,7 +1053,7 @@ public class Plugin extends JavaPlugin {
 						
 						if(not.length()>0){
 							not = not.substring(2);
-							ret+=Sprache.select(p.getName(), "   �aUnknown materials�f: ", "   �aUnbekannte Materialien�f: ", "   �aMat�riaux inconnues�f: ", null)+not+"\n";
+							ret+=Sprache.select(p.getName(), "   §aUnknown materials§f: ", "   §aUnbekannte Materialien§f: ", "   §aMatériaux inconnues§f: ", null)+not+"\n";
 						}
 						int t;
 						// wenn nur ein Material angegeben wurde, dieses aber unbekannt ist...
@@ -1068,7 +1068,7 @@ public class Plugin extends JavaPlugin {
 									result+=", "+mat.name();
 								}
 							}
-							ret+=Sprache.select(p.getName(), "   �aOffres�f: ", "   �aVorschl�ge�f: ", null, null)+result+"\n";
+							ret+=Sprache.select(p.getName(), "   §aOffres§f: ", "   §aVorschläge§f: ", null, null)+result+"\n";
 							result = "";
 						}
 						
@@ -1086,7 +1086,7 @@ public class Plugin extends JavaPlugin {
 								}
 							}
 							
-							// alle Inhaltsstoffe des Rezeptes sind erf�llt -> kommt 100%if auf die Liste :)
+							// alle Inhaltsstoffe des Rezeptes sind erfüllt -> kommt 100%if auf die Liste :)
 							if(y==x && y>0 && !perfect.contains(", "+(perf=r.getResultName()))){
 								perfect+=", "+perf;
 								if(x>best){
@@ -1103,17 +1103,17 @@ public class Plugin extends JavaPlugin {
 						
 						if(perfect.length()>0){
 							ret+=Sprache.select(p.getName(),
-									"   �aPerfect results�f: ",
-									"   �aPerfekte Ergebnisse�f: ", null, null)+perfect.substring(2)+"\n";
+									"   §aPerfect results§f: ",
+									"   §aPerfekte Ergebnisse§f: ", null, null)+perfect.substring(2)+"\n";
 						}
 						if(result.length()==0 || best==0){
 							ret+=Sprache.select(p.getName(),
-									"   �cNo results!",
-									"�cKeine Ergebnisse!", null, null);
+									"   §cNo results!",
+									"§cKeine Ergebnisse!", null, null);
 						} else {
 							ret+=Sprache.select(p.getName(),
-									"   �a"+best+" hit"+(best>1?"s":"")+" @�f",
-									"   �a"+best+" �bereinstimmung"+(best>1?"en":"")+" bei�f ", null, null)+result.substring(2);
+									"   §a"+best+" hit"+(best>1?"s":"")+" @§f",
+									"   §a"+best+" §bereinstimmung"+(best>1?"en":"")+" bei§f ", null, null)+result.substring(2);
 						}
 						p.sendMessage(ret);
 					} else {
@@ -1123,7 +1123,7 @@ public class Plugin extends JavaPlugin {
 						}
 
 						s=s.substring(1).toUpperCase();
-						String ret = "\n  �c<"+s+">�f\n \n";
+						String ret = "\n  §c<"+s+">§f\n \n";
 						
 						int best=100000, x;
 						ArrayList<MyRecipe> res = null;
@@ -1148,7 +1148,7 @@ public class Plugin extends JavaPlugin {
 				sendKingsmessages(p.getName());break;
 			case "lag":
 			case "lagg":
-				p.sendMessage(prefix+"/�alag�7[lagg]�f <mobs> <friendly> kills entities to remove your lag. Use true/false or 1/0 as arguments.");break;
+				p.sendMessage(prefix+"/§alag§7[lagg]§f <mobs> <friendly> kills entities to remove your lag. Use true/false or 1/0 as arguments.");break;
 			default:
 				p.sendMessage(prefix+Sprache.select(p.getName(), "No help found.", "Zu diesem Thema wurde keine Extrahilfe gefunden.", null, null));
 			}
@@ -1173,7 +1173,7 @@ public class Plugin extends JavaPlugin {
 		} else if(label.equalsIgnoreCase("king")){
 			p.sendMessage(prefix+Sprache.select(p.getName(),
 					kingsname+" is your "+(Plugin.isQueen?"Queen":"King")+".",
-					kingsname+" ist dein"+(isQueen?"e K�nigin.":" K�nig."), null, null));
+					kingsname+" ist dein"+(isQueen?"e Königin.":" König."), null, null));
 			onCommand(p, null, "name", new String[]{"-", kingsname});
 		} else if(label.equalsIgnoreCase("lag") || label.equalsIgnoreCase("lagg")){
 			boolean items=true, monsters=false, friendly2=false;
@@ -1197,7 +1197,7 @@ public class Plugin extends JavaPlugin {
 		} else if(label.equalsIgnoreCase("list")){
 			if(args==null || args.length==0 || args[0].equals("?") || args[0].equalsIgnoreCase("help")){
 				p.sendMessage(prefix+Sprache.select(p.getName(),
-						"�cHelp: list of all lists :)�f\n"
+						"§cHelp: list of all lists :)§f\n"
 						+ "   �arichest�f: The three richest people\n"
 						+ "   �aplots�f: Your plots: plotname x z\n"
 						+ "   �applots�f: Public plots (may need a /rank to build there)\n"
