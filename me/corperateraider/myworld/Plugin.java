@@ -103,7 +103,7 @@ public class Plugin extends JavaPlugin {
 	
 	/**
 	--------------
-	Sonderrechte des K�nigs nur innerhalb der Stadt...
+	Sonderrechte des Königs nur innerhalb der Stadt...
 	--------------
 	Postservice?
 	--------------
@@ -133,7 +133,7 @@ public class Plugin extends JavaPlugin {
 	---------------
 	Badlands-deco
 		Done: Oase, Obelisk, Pyramide
-		Todo: irgendwas f�r die Vulkane, Dungeons, vllt Tempel
+		Todo: irgendwas für die Vulkane, Dungeons, vllt Tempel
 	---------------
 		Done: Policethread running?
 	---------------
@@ -153,11 +153,11 @@ public class Plugin extends JavaPlugin {
 		Glowstone -> theoretisch schon
 			Akazien + Dark Oak
 		Schwamm
-			K�rbis dank Schneem�nnern
+			Kürbis dank Schneemännern
 		cracked+chisseled stone bricks
 		compressed ice - in work@recipemanager
 		dead bush
-		alle gro�en Blumen?
+		alle großen Blumen?
 			all flower types??
 			lily pad (seerose)
 			skulls of monsters + players on death
@@ -201,9 +201,9 @@ public class Plugin extends JavaPlugin {
 			bot. Garten + things in RuinPopulator
 	---------------
 	Extra Herausforderungen zum Sammeln:
-		L�ufer 1km, 10km, 100km, 1000km, 10kkm, 100Mm, 1Gm...
+		Läufer 1km, 10km, 100km, 1000km, 10kkm, 100Mm, 1Gm...
 		Schwimmer, Flieger, Springer,...
-		M�rder 10x, 100x, 1000x, 10kx, 100kx
+		Mörder 10x, 100x, 1000x, 10kx, 100kx
 		Zeit auf dem Server (naja)
 		Miner 10x 100x 1kx, 10kx, 100kx
 		
@@ -211,7 +211,7 @@ public class Plugin extends JavaPlugin {
 			Geld / Dias / seltene Stoffe
 	---------------
 		Done: Sinnlos, da man die Statistiken auch so als Spieler sehen kann...
-			"Gesch�pfter Wert berechnen lassen xD"
+			"Geschöpfter Wert berechnen lassen xD"
 	---------------
 		Done: AfK
 	---------------
@@ -223,7 +223,7 @@ public class Plugin extends JavaPlugin {
 	
 	*/
 	
-	public static String prefix = ChatColor.WHITE+"["+ChatColor.RED+"Kingdom"+ChatColor.WHITE+"] ", badprefix = "�4[�fWildlings�4]�f ", serfix="[�2Server�f] ";
+	public static String prefix = ChatColor.WHITE+"["+ChatColor.RED+"Kingdom"+ChatColor.WHITE+"] ", badprefix = "§4[§fWildlings§4]§f ", serfix="[§2Server§f] ";
 	public static String[] spawnArray = new String[]{"-15", "25", "-20"};
 	public static int width = 524288;// halbe Weite des Rechteckes...
 	public static World world;
@@ -988,7 +988,7 @@ public class Plugin extends JavaPlugin {
 						+ "   /§a$§7[price]§f Gives you a price for the plot, you're standing on\n"
 						+ "   /§ar§7[rename]§f <plotname> <newplotname>\n"
 						+ "   /§asp§7[splot, showplot]§f Shows the plot area you're standing on\n"
-						+ "   /§atp§7[teleport]§f <name> Accept + §cCosts 1gn/100m ANYWAY�f\n"
+						+ "   /§atp§7[teleport]§f <name> Accept + §cCosts 1gn/100m ANYWAY§f\n"
 						+ "   /§aaccept§f accept a tp offer\n"
 						+ "   /§awakeup§7[home]§f tp to home\n"
 						+ (Rank.hasPermisson(p.getName(), "spawn")?
@@ -1031,7 +1031,7 @@ public class Plugin extends JavaPlugin {
 					// suche nach Inhaltsstoffem
 					if(args[1].startsWith("in:")){
 						
-						String ret = prefix+Sprache.select(p.getName(), "§cIngredient Search§f:\n", "�cInhaltsstoffsuche�f:\n", null, null);
+						String ret = prefix+Sprache.select(p.getName(), "§cIngredient Search§f:\n", "§cInhaltsstoffsuche§f:\n", null, null);
 						
 						args[1]=args[1].substring(3);
 						
@@ -1192,22 +1192,22 @@ public class Plugin extends JavaPlugin {
 			p.sendMessage(Sprache.select(p.getName(),
 					"Changed your language to English!",
 					"Sprache auf Deutsch umgestellt!",
-					"La langue �tait adapt�e au francais!",
-					"Fue cambiado a espa�ol!"));
+					"La langue était adapte au francais!",
+					"Fue cambiado a espagnol!"));
 		} else if(label.equalsIgnoreCase("list")){
 			if(args==null || args.length==0 || args[0].equals("?") || args[0].equalsIgnoreCase("help")){
 				p.sendMessage(prefix+Sprache.select(p.getName(),
 						"§cHelp: list of all lists :)§f\n"
-						+ "   �arichest�f: The three richest people\n"
-						+ "   �aplots�f: Your plots: plotname x z\n"
-						+ "   �applots�f: Public plots (may need a /rank to build there)\n"
-						+ "   �aranks�f: All ranks and their permissions",
+						+ "   §arichest§f: The three richest people\n"
+						+ "   §aplots§f: Your plots: plotname x z\n"
+						+ "   §applots§f: Public plots (may need a /rank to build there)\n"
+						+ "   §aranks§f: All ranks and their permissions",
 						
-						"�cHilfe: Die Liste aller Listen :)�f\n"
-						+ "   �arichest�f: Die drei reichsten Spieler\n"
-						+ "   �aplots�f: Deine Grundstücke und x, sowie z\n"
-						+ "   �applots�f: �ffentliche Grundstücke (k�nnen Rechte erfordern)\n"
-						+ "   �aranks�f: Alle R�nge und deren Rechte", null, null));
+						"§cHilfe: Die Liste aller Listen :)§f\n"
+						+ "   §arichest§f: Die drei reichsten Spieler\n"
+						+ "   §aplots§f: Deine Grundstücke und x, sowie z\n"
+						+ "   §applots§f: öffentliche Grundstücke (können Rechte erfordern)\n"
+						+ "   §aranks§f: Alle Ränge und deren Rechte", null, null));
 			} else if(args[0].equalsIgnoreCase("richest")){
 				String s;
 				p.sendMessage(Bank.prefix+Sprache.select(p.getName(),
@@ -1216,25 +1216,25 @@ public class Plugin extends JavaPlugin {
 						null, null));
 			} else if(args[0].equalsIgnoreCase("plots") || args[0].equalsIgnoreCase("plot")){
 				p.sendMessage(prefix+Sprache.select(p.getName(),
-						"�cLists: your plots�f", "�cDeine Grundstücke�f", null, null)+Grundstück.getMyPlots(p.getName()));
+						"§cLists: your plots§f", "§cDeine Grundstücke§f", null, null)+Grundstück.getMyPlots(p.getName()));
 			} else if(args[0].equalsIgnoreCase("pplots") || args[0].equalsIgnoreCase("publicplots")){
-				p.sendMessage(prefix+Sprache.select(p.getName(), "�cLists: public plots�f", "�c�ffentliche Grundstücke�f", null, null)+Grundstück.getMyPlots("@king"));
+				p.sendMessage(prefix+Sprache.select(p.getName(), "§cLists: public plots§f", "§cöffentliche Grundstücke§f", null, null)+Grundstück.getMyPlots("@king"));
 			} else if(args[0].equalsIgnoreCase("ranks") || args[0].equalsIgnoreCase("rank")){
 				if(args.length==2){
-					args[1]=args[1].replace('&', '�');
+					args[1]=args[1].replace('&', '§');
 					if(Rank.ranks.containsKey(args[1])){
-						p.sendMessage(prefix+"�cLists: ranks:�f \""+args[1]+"\""+Rank.permissionsAsString(Rank.ranks.get(args[1]).permissions).replace("-", ", "));
+						p.sendMessage(prefix+"§cLists: ranks:§f \""+args[1]+"\""+Rank.permissionsAsString(Rank.ranks.get(args[1]).permissions).replace("-", ", "));
 					} else if(args[1].equalsIgnoreCase("zero")){
-						p.sendMessage(prefix+"�cRank.zero�f has zero permissions... logically, isn't it?");
+						p.sendMessage(prefix+"§cRank.zero§f has zero permissions... logically, isn't it?");
 					} else {
 						int k = MathHelper.stringToInt(args[1], 0)-1;
 						if(k>=0 && k<Rank.ranks.size()){
 							args[1] = Rank.ranks.keySet().toArray(new String[Rank.ranks.size()])[k];
 							if(args[1].equalsIgnoreCase("none")){
-								p.sendMessage(prefix+"�cRank.zero�f has zero permissions... logically, isn't it?");
+								p.sendMessage(prefix+"§cRank.zero§f has zero permissions... logically, isn't it?");
 							} else {
 								Rank r = Rank.ranks.get(args[1]);
-								p.sendMessage(prefix+"�cLists: ranks:�f \""+args[1]+"�f\""+Rank.permissionsAsString(r.permissions).replace("-", ", "));
+								p.sendMessage(prefix+"§cLists: ranks:§f \""+args[1]+"§f\""+Rank.permissionsAsString(r.permissions).replace("-", ", "));
 								String ret="";
 								for(String name:Rank.players.keySet()){
 									if(Rank.players.get(name).equals(r)){
@@ -1245,29 +1245,29 @@ public class Plugin extends JavaPlugin {
 							}
 						} else {
 							p.sendMessage(prefix+Sprache.select(p.getName(),
-									"�cLists: ranks�f\nNo rank with the name \""+args[1]+"�f\" found!",
-									"�cListen: R�nge�f\nEs wurde kein Rang mit dem Namen \""+args[1]+"\" gefunden!", null, null));
+									"§cLists: ranks§f\nNo rank with the name \""+args[1]+"§f\" found!",
+									"§cListen: Ränge§f\nEs wurde kein Rang mit dem Namen \""+args[1]+"\" gefunden!", null, null));
 						}
 					}
 				} else {
-					String ret = prefix+"�cLists: ranks�f";
+					String ret = prefix+"§cLists: ranks§f";
 					int i=0;
 					for(Rank r:Rank.ranks.values()){
-						ret+="\n   ("+(++i)+") "+r.label+"�f";
+						ret+="\n   ("+(++i)+") "+r.label+"§f";
 					}
 					if(p.getName().equalsIgnoreCase(kingsname)){
 						p.sendMessage(ret+"\n"
-								+ "   Use �c/list ranks <rankname>�f to get the permissions\n"
-								+ "   Use �csigns with '#rankname'�f at first line to define a new rank\n"
+								+ "   Use §c/list ranks <rankname>§f to get the permissions\n"
+								+ "   Use §csigns with '#rankname'§f at first line to define a new rank\n"
 								+ "  On the other lines, you can write its permissions\n"
-								+ "   Use �csigns with '@rankname'�f @1.line to give a player his rank\n"
+								+ "   Use §csigns with '@rankname'§f @1.line to give a player his rank\n"
 								+ "  On the other lines, you have to write theirs names\n"
-								+ "   Use �c/name <playername>�f to get their right names :)\n"
+								+ "   Use §c/name <playername>§f to get their right names :)\n"
 								+ "   You can marry people via giving them the same name and\n"
 								+ "  buy their plot, then give them the permission to build there :)\n"
 								+ "  Of course you can take money for the plot and their marriage :)");
 					} else {
-						p.sendMessage(ret+"\n�aUse /list ranks <rankname> to see the permissions");
+						p.sendMessage(ret+"\n§aUse /list ranks <rankname> to see the permissions");
 					}
 				}
 			}
@@ -1281,7 +1281,7 @@ public class Plugin extends JavaPlugin {
 						boolean king = p.getName().equalsIgnoreCase(kingsname);
 						switch(k=Grundstück.getCosts(p, "#", x, z, intByLong(Bank.getBilance(king?"@king":p.getName())), false)){
 						case -1:
-							p.sendMessage(prefix+"�4You bought this plot for -1gn. This is an error. Please report to your admin: Miner952x");
+							p.sendMessage(prefix+"§4You bought this plot for -1gn. This is an error. Please report to your admin: Miner952x");
 							break;
 						default:
 							if(king){
@@ -1294,7 +1294,7 @@ public class Plugin extends JavaPlugin {
 					} else {
 						p.sendMessage(prefix+Sprache.select(p.getName(), 
 								"This plot is allready claimed by "+oldowner+". Maybe she/he sells it.",
-								"Dieses Grundstück geh�rt bereits "+oldowner+". Vielleicht verkauft er es.", null, null));
+								"Dieses Grundstück gehört bereits "+oldowner+". Vielleicht verkauft er es.", null, null));
 					}
 				} else {
 					p.sendMessage(prefix+Sprache.select(p.getName(),
@@ -1304,7 +1304,7 @@ public class Plugin extends JavaPlugin {
 			} else {
 				p.sendMessage(badprefix+Sprache.select(p.getName(),
 						"You're out of the kingdom. There are no rules!",
-						"Du bist au�erhalb des K�nigreiches. Hier gibt es keine Regeln mehr!", null, null));
+						"Du bist außerhalb des Königreiches. Hier gibt es keine Regeln mehr!", null, null));
 			}
 			return true;
 		} else if(label.equalsIgnoreCase("r") || label.equalsIgnoreCase("rename")){
@@ -1322,7 +1322,7 @@ public class Plugin extends JavaPlugin {
 				if(args[1].length()<3 || args[1].length()>16){
 					p.sendMessage(prefix+Sprache.select(p.getName(),
 							"Your new plot name can't be longer than 16 or shorter than 3 symbols!",
-							"Dein Grundstücksname kann nicht l�nger als 16 oder k�rzer als 3 Zeichen sein!", null, null));
+							"Dein Grundstücksname kann nicht länger als 16 oder kürzer als 3 Zeichen sein!", null, null));
 				} else if(ok) try {
 					if(Grundstück.rename(args[0], args[1], p.getName())){
 						p.sendMessage(prefix+"Successfully renamed your plot to \""+args[1]+"\" :)");
